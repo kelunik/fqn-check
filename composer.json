@@ -1,0 +1,24 @@
+{
+    "name": "kelunik/fqn-check",
+    "description": "Checks source trees for not fully qualified function calls.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Niklas Keller",
+            "email": "me@kelunik.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kelunik\\FqnCheck\\": "src"
+        }
+    },
+    "bin": [
+        "bin/fqn-check"
+    ],
+    "require": {
+        "nikic/php-parser": "^3.0",
+        "symfony/finder": "^3.2"
+    }
+}
