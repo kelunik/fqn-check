@@ -13,7 +13,14 @@ if ($argc !== 2) {
     exit(0);
 }
 
-require_once __DIR__ . "/../vendor/autoload.php";
+if (file_exists(__DIR__ . "/../vendor/autoload.php") {
+    require_once __DIR__ . "/../vendor/autoload.php";
+} else if (file_exists(__DIR__ . "/../../../vendor/autoload.php")) {
+    require_once __DIR__ . "/../../../vendor/autoload.php";
+} else {
+    print "Missing dependencies, forgot to run 'composer install'?" . PHP_EOL;
+    exit(255);
+}
 
 $srcDir = $argv[1];
 
