@@ -21,7 +21,7 @@ class FqnChecker implements NodeVisitor {
     }
 
     public function enterNode(Node $node) {
-        if (!$node instanceof Node\Expr\FuncCall) {
+        if (!($node instanceof Node\Expr\FuncCall || $node instanceof Node\Expr\ConstFetch)) {
             return;
         }
 
@@ -30,6 +30,10 @@ class FqnChecker implements NodeVisitor {
         }
 
         if ($node->name->isFullyQualified()) {
+            return;
+        }
+
+        if (in_array(\strtolower($node->name->toString()), ['true', 'false', 'null'], true)) {
             return;
         }
 
