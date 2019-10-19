@@ -49,7 +49,7 @@ foreach ($files as $file) {
 
     foreach ($findings as $finding) {
         if ($errors === 0) {
-            print "Found not fully qualified function calls in the following files:" . PHP_EOL;
+            print "Found not fully qualified function calls and/or constants in the following files:" . PHP_EOL;
         }
 
         $errors++;
@@ -63,6 +63,6 @@ if ($errors === 0) {
     exit(0);
 } else {
     print PHP_EOL;
-    print "Found {$errors} not fully qualified function calls.";
+    print "Found {$errors} not fully qualified function calls and/or constants.";
     exit(1);
 }
