@@ -18,7 +18,7 @@
         "bin/fqn-check"
     ],
     "require": {
-        "nikic/php-parser": "^3.0",
-        "symfony/finder": "^3.2"
+        "nikic/php-parser": "^2.0|^3.0|^4.0",
+        "symfony/finder": "^2.3|^3.0|^4.0"
     }
 }
