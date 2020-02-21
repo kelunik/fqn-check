@@ -18,7 +18,7 @@ All not fully qualified function calls and constants will be listed and the exit
 
 ## Alternatives
 
-You might also want to check out `friendsofphp/php-cs-fixer` with its `native_function_invocation` option.
+You might also want to check out [friendsofphp/php-cs-fixer](https://github.com/friendsofphp/php-cs-fixer) with its `native_function_invocation` option.
 
 ## License
 
