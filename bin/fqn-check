@@ -41,20 +41,24 @@ $fileCount = count($files);
 print "Checking {$fileCount} file" . ($fileCount === 1 ? "" : "s") . "…" . PHP_EOL . PHP_EOL;
 
 foreach ($files as $file) {
-    /** @var SplFileInfo $file */
-    $nodes = $parser->parse($file->getContents());
-    $nodeTraverser->traverse($nodes);
+    try {
+        /** @var SplFileInfo $file */
+        $nodes = $parser->parse($file->getContents());
+        $nodeTraverser->traverse($nodes);
 
-    $findings = $fqnChecker->getFindings();
+        $findings = $fqnChecker->getFindings();
 
-    foreach ($findings as $finding) {
-        if ($errors === 0) {
-            print "Found not fully qualified function calls and/or constants in the following files:" . PHP_EOL;
+        foreach ($findings as $finding) {
+            if ($errors === 0) {
+                print "Found not fully qualified function calls and/or constants in the following files:" . PHP_EOL;
+            }
+
+            $errors++;
+
+            print " - " . $file->getRelativePathname() . " on line {$finding["line"]} ({$finding["function"]})" . PHP_EOL;
         }
-
-        $errors++;
-
-        print " - " . $file->getRelativePathname() . " on line {$finding["line"]} ({$finding["function"]})" . PHP_EOL;
+    } catch (PhpParser\Error $e) {
+        print $e->getMessage() . " (errored in file: " . $file->getFilename() . ")\n";
     }
 }
 
