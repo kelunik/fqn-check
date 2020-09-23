@@ -2,6 +2,7 @@
 <?php
 
 use Kelunik\FqnCheck\FqnChecker;
+use PhpParser\Lexer;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitor\NameResolver;
 use PhpParser\ParserFactory;
@@ -28,7 +29,7 @@ $files = (new Finder)->files()
     ->in($srcDir)
     ->name("*.php");
 
-$parser = (new ParserFactory)->create(ParserFactory::PREFER_PHP7);
+$parser = (new ParserFactory)->create(ParserFactory::PREFER_PHP7, new Lexer());
 $nodeTraverser = new NodeTraverser;
 
 $fqnChecker = new FqnChecker;
