@@ -5,3 +5,6 @@
 # Composer
 composer.phar
 vendor/
+
+# PhpUnit
+.phpunit.result.cache

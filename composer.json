@@ -9,9 +9,20 @@
             "email": "me@kelunik.com"
         }
     ],
+    "scripts": {
+        "test": "cd vendor/phpunit && phpunit ../../test"
+    },
     "autoload": {
         "psr-4": {
             "Kelunik\\FqnCheck\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "test/"
+        ],
+        "psr-4": {
+            "Test\\": "test/"
         }
     },
     "bin": [
@@ -20,5 +31,8 @@
     "require": {
         "nikic/php-parser": "^2.0|^3.0|^4.0",
         "symfony/finder": "^2.3|^3.0|^4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
     }
 }
