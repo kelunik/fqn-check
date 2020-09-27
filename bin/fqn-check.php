@@ -59,7 +59,7 @@ foreach ($files as $file) {
             print " - " . $file->getRelativePathname() . " on line {$finding["line"]} ({$finding["function"]})" . PHP_EOL;
         }
     } catch (PhpParser\Error $e) {
-        print $e->getMessage() . " (errored in file: " . $file->getFilename() . ")\n";
+        print $e->getMessage() . " (errored in file: " . $file->getFilename() . ")" . PHP_EOL;
     }
 }
 
