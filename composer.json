@@ -1,7 +1,7 @@
 {
     "name": "rawr/fqn-check",
     "description": "Checks source trees for not fully qualified function calls.",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
