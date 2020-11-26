@@ -1,5 +1,5 @@
 {
-    "name": "kelunik/fqn-check",
+    "name": "rawr/fqn-check",
     "description": "Checks source trees for not fully qualified function calls.",
     "type": "project",
     "license": "MIT",
