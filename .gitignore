@@ -1,1 +1,10 @@
-/vendor/
+# Project
+.idea
+*.iml
+
+# Composer
+composer.phar
+vendor/
+
+# PhpUnit
+.phpunit.result.cache
