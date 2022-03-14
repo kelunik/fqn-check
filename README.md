@@ -5,7 +5,7 @@ Checks source trees for fully qualified function calls and constants.
 ## Installation
 
 ```
-composer require --dev kelunik/fqn-check
+composer require --dev rawr/fqn-check
 ```
 
 ## Usage
